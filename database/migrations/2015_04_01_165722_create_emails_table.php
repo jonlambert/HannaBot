@@ -24,6 +24,7 @@ class CreateEmailsTable extends Migration {
             $table->text('html_message');
             $table->string('to');
             $table->integer('user_id');
+            $table->boolean('actioned');
         });
 	}
 

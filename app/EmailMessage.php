@@ -12,7 +12,8 @@ class EmailMessage extends Model {
         'message',
         'html_message',
         'user_id',
-        'to'
+        'to',
+        'actioned'
     ];
 
     protected $table = 'email_messages';
