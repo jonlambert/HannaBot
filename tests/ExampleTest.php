@@ -26,12 +26,9 @@ class ExampleTest extends TestCase {
                ->remind('Meeting with Sarah')
                ->forUser(1)
                ->at('1pm');
-//        $ledger->schedule($reminder);
 
 
         $processor = App::make('App\Services\Inbox\EmailProcessor');
         $processor->run();
-
-//        $ledger->process();
     }
 }
