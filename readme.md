@@ -1,5 +1,20 @@
 ## HannaBot
-HannaBot lets you organise yourself, using email.
+HannaBot lets you organise yourself, using email. Register a free email account with Gmail (or other provider), then link it to HannaBot. When you send an email to `<your-username>+remind@gmail.com`, with a date in the subject field, HannaBot will send the email back to you on that specified date. 
+
+```
+To: <your-username>+remind@gmail.com
+From: <your trigger email>
+Subject: 2 days
+Body: 
+-- Forwarded email --
+
+Hi Jon,
+
+This is an email I've sent to you, that I need you to reply to in 2 days.
+
+Thanks,
+Dave
+```
 
 ## Install requirements
 Required PHP Modules:
