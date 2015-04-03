@@ -31,15 +31,15 @@ class EmailProcessor {
         $messages = EmailMessage::where('to', 'LIKE', '%+remind%')->where('actioned', '<>', 1)->get();
 
         foreach ($messages as $message) {
-            $reminder = $this->scheduler->via('email', ['address' => $message->user->email]);
             $time = preg_replace('/Fwd(.*)/', '', $message->subject);
-
+            
+            $reminder = $this->scheduler->via('email', ['address' => $message->user->email]);
             $reminder = $reminder->at($time)->forUser($message->user->id)->remind($message->message);
 
             $this->scheduler->schedule($reminder);
 
             $message->actioned = true;
-            print $message->save();
+            $message->save();
         }
     }
 } 
