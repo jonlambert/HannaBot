@@ -23,6 +23,9 @@ class EmailProcessor {
         $this->processRemindMe();
     }
 
+    /**
+     * TODO: Break this up into different handlers. +remind should parse and schedule reminders, +receipt should store the receipt.
+     */
     public function processRemindMe()
     {
         $messages = EmailMessage::where('to', 'LIKE', '%+remind%')->where('actioned', '<>', 1)->get();
